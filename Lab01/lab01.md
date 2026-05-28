@@ -17,13 +17,13 @@ Usamos o comando abaixo para criptografar o arquivo de texto:
 ```
 openssl enc -aes-256-ecb -in texto.txt -out texto_ecb.enc
 ```
-!img[img1](Imagens/img1.png)
+![img1](Imagens/img1.png)
 
 Para decodificar usamos: 
 ```
 openssl enc -aes-256-ecb -d -in texto_ecb.enc -out texto_ecb_dec.txt
 ```
-!img[img2](Imagens/img2.png)
+![img2](Imagens/img2.png)
 
 ### 2. AES-256-CBC (Cipher Block Chaining)
 Para criptografar: 
@@ -34,7 +34,7 @@ Para decodificar:
 ```
 openssl enc -aes-256-cbc -d -in texto_cbc.enc -out texto_cbc_dec.txt
 ```
-!img[img3](Imagens/img3.png)
+![img3](Imagens/img3.png)
 
 ### 3. AES-256-CFB (Cipher Feedback)
 Para criptografar: 
@@ -45,7 +45,7 @@ Para decodificar:
 ```
 openssl enc -aes-256-cfb -d -in texto_cfb.enc -out texto_cfb_dec.txt
 ```
-!img[img4](Imagens/img4.png)
+![img4](Imagens/img4.png)
 
 ### 4. AES-256-OFB (Output Feedback)
 Para criptografar: 
@@ -56,7 +56,7 @@ Para decodificar:
 ```
 openssl enc -aes-256-ofb -d -in texto_ofb.enc -out texto_ofb_dec.txt
 ```
-!img[img5](Imagens/img5.png)
+![img5](Imagens/img5.png)
 
 ### 5. AES-256-CTR (Counter Mode)
 Para criptografar: 
@@ -67,7 +67,7 @@ Para decodificar:
 ```
 openssl enc -aes-256-ctr -d -in texto_ctr.enc -out texto_ctr_dec.txt
 ```
-!img[img6](Imagens/img6.png)
+![img6](Imagens/img6.png)
 
 A mesma senha foi utilizado para criptografar todos os arquivos: blade 
 
@@ -80,16 +80,18 @@ Para decodificar:
 ```
 openssl enc -chacha20 -d -in texto_chacha.enc -out texto_chacha_dec.txt
 ```
-!img[img7](Imagens/img7.png)
+![img7](Imagens/img7.png)
 
 ## Parte 4 – Experimento de Performance
 Primeiro iremos gerar um arquivo de teste com 100mb para medirmos o tempo de cifragem de cada modo. 
-!img[img8](Imagens/img8.png)
+![img8](Imagens/img8.png)
 
 Para medirmos o tempo de cada cifragem usaremos o comando para cada algoritmo de criptografia:
 ``` 
 time openssl enc -algoritmo -in arquivo100M.txt -out saida
 ```
+![img9](Imagens/img9.png)
+![img10](Imagens/img10.png)
 
 # Questões 
 
