@@ -96,7 +96,16 @@ time openssl enc -algoritmo -in arquivo100M.txt -out saida
 # Questões 
 
 1. Qual modo de operação apresentou melhor desempenho?
+O modo AES-256-CTR foi o mais rápido, concluindo a tarefa em 2,10 segundos. O segundo melhor foi o ChaCha20, com 2,39 segundos.  
+
 2. Por que o ECB é considerado inseguro mesmo sendo rápido?
+Porque ele cifra blocos de dados idênticos sempre gerando o mesmo resultado cifrado. Isso falha em ocultar os padrões e a estrutura da informação original (como os contornos de uma imagem, por exemplo).
+
 3. Quais modos são mais adequados para redes de comunicação?
+O CTR (Counter Mode) é o mais indicado, pois permite o processamento em paralelo e serve de base para padrões modernos e autênticos como o AES-GCM. O ChaCha20 também é amplamente recomendado para redes.
+
 4. O que diferencia o ChaCha20 do AES em termos de eficiência e segurança?
+Ambos são extremamente seguros. A diferença está na eficiência: o AES é muito mais rápido em dispositivos com suporte nativo de hardware (processadores modernos com AES-NI), enquanto o ChaCha20, que é uma cifra de fluxo, foi otimizado para rodar de forma extremamente veloz via software em dispositivos mais simples (IoT, roteadores, celulares mais antigos).
+
 5. Como essa prática se relaciona com protocolos como TLS, IPsec e VPNs modernas?
+Protocolos como TLS e IPsec utilizam exatamente esses algoritmos simétricos (AES e ChaCha20) para fazer o "trabalho pesado". Após uma troca inicial de chaves, eles são os responsáveis por criptografar todo o volume de dados trafegados na conexão de forma rápida e confidencial.  
